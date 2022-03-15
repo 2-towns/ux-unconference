@@ -1,0 +1,133 @@
+@import 'styles/variables.scss';
+
+.scene {
+  $height: 100vh;
+  height: $height;
+  max-height: $height;
+  overflow: hidden;
+
+  &.grow-vertically {
+    min-height: $height;
+    height: auto;
+    max-height: none;
+  }
+
+  &.grow-naturally {
+    min-height: auto;
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  > * {
+    flex-shrink: 0;
+  }
+
+  .animated-background {
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+
+  :global(#title-section) {
+    flex-grow: 1;
+  }
+
+  .title-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 82px;
+    font-family: $font-secondary;
+
+    p {
+      margin-bottom: 0.2em;
+    }
+
+    span {
+      font-weight: 300;
+      font-family: $font-tertiary;
+      color: $color-grey;
+      margin-left: 0.2em;
+    }
+  }
+
+  .bottom-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $screen-lg) {
+      flex-direction: row;
+    }
+
+    .date-block {
+      display: flex;
+      align-items: center;
+
+      .date {
+        font-family: $font-tertiary;
+        font-size: 32px;
+        line-height: 1em;
+
+        @media (min-width: $screen-sm) {
+          font-size: 48px;
+        }
+      }
+
+      .where {
+        margin-left: 1em;
+        display: flex;
+        flex-direction: column;
+        @include big-text;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+
+        span {
+          @include tiny-text;
+          font-weight: 700;
+          font-family: $font-primary;
+          color: #ff6600;
+        }
+      }
+    }
+
+    .call-to-action {
+      > * {
+        margin-right: 16px;
+      }
+    }
+
+    .location {
+      display: flex;
+      --icon-color: #{$color-grey};
+
+      svg {
+        font-size: 32px;
+        color: $color-grey;
+      }
+    }
+  }
+
+  .scroll-to-continue {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 0px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid $color-grey;
+
+    p {
+      margin-left: 16px;
+      color: $color-grey;
+      @include tiny-text;
+      text-transform: uppercase;
+    }
+  }
+}

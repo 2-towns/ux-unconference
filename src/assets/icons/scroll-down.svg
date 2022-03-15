@@ -1,0 +1,5 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 4V11.3333" stroke="#DADADA" stroke-miterlimit="10"/>
+<path d="M10.6667 8.66667L8.00004 11.3333L5.33337 8.66667" stroke="#DADADA" stroke-miterlimit="10" stroke-linecap="square"/>
+<path d="M8.00002 15.3333C12.0501 15.3333 15.3334 12.0501 15.3334 8C15.3334 3.94992 12.0501 0.666672 8.00002 0.666672C3.94993 0.666672 0.666687 3.94992 0.666687 8C0.666687 12.0501 3.94993 15.3333 8.00002 15.3333Z" stroke="#DADADA" stroke-miterlimit="10" stroke-linecap="square"/>
+</svg>
