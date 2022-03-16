@@ -1,2 +1,29 @@
+@import 'styles/variables.scss';
+
 .menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+
+  .left {
+    display: flex;
+    font-weight: bold;
+    font-size: 56px;
+
+    svg {
+      width: 56px;
+      height: 56px;
+    }
+
+    .title {
+      @include tiny-text;
+      margin-left: 40px;
+
+      span {
+        color: $color-orange;
+      }
+    }
+  }
 }
