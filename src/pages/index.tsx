@@ -63,7 +63,7 @@ const parallax = (parallaxMultiplier: any) => {
   const translateYPercentage = baselineTranslateY - parallaxMultiplier * range
 
   return {
-    '--translateY': `${Math.min(3, translateYPercentage * -1)}%`,
+    transform: `translateY(${Math.min(3, translateYPercentage * -1)}%)`,
   }
 }
 
@@ -196,7 +196,7 @@ const Home: NextPage = () => {
           <Background />
         </div>
       </div>
-      {/* <div className={css['scene']}></div> */}
+      <div className={css['scene']}></div>
     </div>
   )
 }
