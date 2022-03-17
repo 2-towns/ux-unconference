@@ -132,7 +132,7 @@ const Home: NextPage = () => {
               <div className={css['location']}>
                 <PinIcon />
                 <p>
-                  Het West-Indisch Hui
+                  Het West-Indisch Huis
                   <br />
                   Herenmarkt 99, 1013 EC Amsterdam, Netherlands
                 </p>
@@ -213,8 +213,8 @@ const Home: NextPage = () => {
           <div className={css['block-1']}>
             <div className={css['left']}>
               <p className="large-text">
-                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that Zuck
-                &amps; Mates can co-opt with their metabucks.
+                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that Zuck &
+                Mates can co-opt with their metabucks.
               </p>
 
               <p className={`${css['grey']} tiny-text`}>

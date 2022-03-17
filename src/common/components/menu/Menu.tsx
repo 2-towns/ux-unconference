@@ -70,7 +70,7 @@ const MobileNavigation = () => {
     }
   }, [open])
 
-  if (!mounted) return false
+  if (!mounted) return null
 
   return (
     <div className={css['mobile-menu']}>
