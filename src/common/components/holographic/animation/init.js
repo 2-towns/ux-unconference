@@ -41,23 +41,42 @@ function init(container) {
 
   const loader = new OBJLoader()
 
+  // loader.load(modelMale, function (object) {
+  //   const positions = combineBuffer(object, 'position')
+
+  //   createMesh(positions, scene, 4.05, -500, -350, 600, 0xff7744)
+  //   createMesh(positions, scene, 4.05, 500, -350, 0, 0xff5522)
+  //   createMesh(positions, scene, 4.05, -250, -350, 1500, 0xff9922)
+  //   createMesh(positions, scene, 4.05, -250, -350, -1500, 0xff99ff)
+  // })
+
+  // loader.load(modelFemale, function (object) {
+  //   const positions = combineBuffer(object, 'position')
+
+  //   createMesh(positions, scene, 4.05, -1000, -350, 0, 0xffdd44)
+  //   createMesh(positions, scene, 4.05, 0, -350, 0, 0xffffff)
+  //   createMesh(positions, scene, 4.05, 1000, -350, 400, 0xff4422)
+  //   createMesh(positions, scene, 4.05, 250, -350, 1500, 0xff9955)
+  //   createMesh(positions, scene, 4.05, 250, -350, 2500, 0xff77dd)
+  // })
+
   loader.load(modelMale, function (object) {
     const positions = combineBuffer(object, 'position')
 
-    createMesh(positions, scene, 4.05, -500, -350, 600, 0xff7744)
-    createMesh(positions, scene, 4.05, 500, -350, 0, 0xff5522)
+    createMesh(positions, scene, 4.05, -500, -350, 600, 0xff5522)
+    createMesh(positions, scene, 4.05, 500, -350, 0, 0x0085ff)
     createMesh(positions, scene, 4.05, -250, -350, 1500, 0xff9922)
-    createMesh(positions, scene, 4.05, -250, -350, -1500, 0xff99ff)
+    createMesh(positions, scene, 4.05, -250, -350, -1500, 0xffffff)
   })
 
   loader.load(modelFemale, function (object) {
     const positions = combineBuffer(object, 'position')
 
-    createMesh(positions, scene, 4.05, -1000, -350, 0, 0xffdd44)
+    createMesh(positions, scene, 4.05, -1000, -350, 0, 0x0085ff)
     createMesh(positions, scene, 4.05, 0, -350, 0, 0xffffff)
     createMesh(positions, scene, 4.05, 1000, -350, 400, 0xff4422)
     createMesh(positions, scene, 4.05, 250, -350, 1500, 0xff9955)
-    createMesh(positions, scene, 4.05, 250, -350, 2500, 0xff77dd)
+    createMesh(positions, scene, 4.05, 250, -350, 2500, 0xffdd44)
   })
 
   renderer = new THREE.WebGLRenderer()

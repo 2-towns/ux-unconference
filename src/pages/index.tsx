@@ -7,12 +7,13 @@ import Logo from 'assets/images/logo.svg'
 import css from './index.module.scss'
 import Menu from 'common/components/menu'
 import HolographicAnimation from 'common/components/holographic/Holographic'
-import HeaderLogo from 'assets/images/devconnect-logo.svg'
+import DevconnectLogo from 'assets/images/devconnect-logo.svg'
 import AmsterdamBackground from 'assets/images/amsterdam-background.png'
 import AmsterdamForeground from 'assets/images/amsterdam-foreground.png'
 import Link from 'common/components/link'
 import ScrollDownIcon from 'assets/icons/scroll-down.svg'
 import PinIcon from 'assets/icons/pin.svg'
+import EFLogo from 'assets/images/ef-logo.svg'
 
 const useParallax = (elementRef: any) => {
   const [parallaxMultiplier, setParallaxMultiplier] = React.useState(0)
@@ -95,18 +96,18 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={css['scene']}>
+      <div className={`${css['scene']}`}>
         <div className={css['hero']}>
           <Menu />
 
           <div className="section" id="title-section">
             <div className={css['title-block']}>
-              <p className="title bold">
+              <h1 className="title bold">
                 UX<span style={{ color: '#7D7D7D' }}>AMS/XXX/22</span>
                 <br />
                 UNCONFERENCE
-              </p>
-              <HeaderLogo />
+              </h1>
+              <DevconnectLogo />
             </div>
           </div>
 
@@ -149,7 +150,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className={css['scene']}>
+      <div className={css['scene']} id="about">
         <div className={css['about']}>
           <div className="section">
             <div className={css['info-block']}>
@@ -159,7 +160,7 @@ const Home: NextPage = () => {
 
               <div className={css['right']}>
                 <div className={css['block']}>
-                  <p className={css['header']}>UX Unconference</p>
+                  <h3 className={css['header']}>UX Unconference</h3>
 
                   <p className="extra-large-text">
                     Open-source design un<span style={{ textDecoration: 'line-through' }}>conference</span> and
@@ -169,7 +170,7 @@ const Home: NextPage = () => {
                 </div>
 
                 <div className={css['block']}>
-                  <p className={css['header']}>Objective</p>
+                  <h3 className={css['header']}>Objective</h3>
 
                   <p className={css['grey']}>
                     Enable cross pollination of fresh perspectives and emerging UX methodologies. Bringing together
@@ -196,7 +197,61 @@ const Home: NextPage = () => {
           <Background />
         </div>
       </div>
-      <div className={css['scene']}></div>
+
+      <div className="section" id="faq">
+        <div className={css['faq']}>
+          <div className={css['left']}>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div className={css['right']}></div>
+        </div>
+      </div>
+
+      <div className="section">
+        <div className={css['footer']}>
+          <div className={css['block-1']}>
+            <div className={css['left']}>
+              <p className="large-text">
+                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that Zuck
+                &amps; Mates can co-opt with their metabucks.
+              </p>
+
+              <p className={`${css['grey']} tiny-text`}>
+                The unconference is a no-shill zone, designed to facilitate sharing and collaboration on research and
+                standardized work being done to improve the overall UX of the ecosystem.
+              </p>
+            </div>
+
+            <div className={css['right']}>
+              <div className={css['content']}>
+                <p>Made possible by:</p>
+
+                <div className={css['logos']}>
+                  <DevconnectLogo />
+                  <EFLogo />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={css['block-2']}>
+            <div className={css['left']}>
+              <p>UX CONF LOGO</p>
+              <p>UX CONF LOGO</p>
+            </div>
+
+            <div className={css['right']}>Right</div>
+          </div>
+
+          <div className={css['copyright-block']}>
+            <p className={`${css['copyright']} tiny-text`}>
+              © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
+            </p>
+            <p className={`${css['empire']} uppercase bold`}>Empire</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

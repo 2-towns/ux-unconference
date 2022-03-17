@@ -4,7 +4,10 @@
   $height: 100vh;
   height: $height;
   max-height: $height;
-  overflow: hidden;
+
+  &.no-overflow {
+    overflow: hidden;
+  }
 
   &.grow-vertically {
     min-height: $height;
@@ -44,10 +47,14 @@
   .title-block {
     display: flex;
     flex-direction: column;
-    margin-top: 82px;
     font-family: $font-secondary;
+    margin-top: 24px;
 
-    p {
+    @media (min-width: $screen-lg) {
+      margin-top: 82px;
+    }
+
+    h1 {
       margin-bottom: 0.2em;
     }
 
@@ -133,7 +140,7 @@
 }
 
 .about {
-  margin-top: 25px;
+  // margin-top: 25px;
   position: relative;
   height: 100%;
 
@@ -163,7 +170,10 @@
 
       .block {
         margin-bottom: 48px;
-        padding-right: 100px;
+
+        @media (min-width: $screen-lg) {
+          padding-right: 100px;
+        }
 
         .header {
           @include small-text;
@@ -198,6 +208,23 @@
   }
 }
 
+.background {
+  overflow: hidden;
+  display: none;
+
+  @media (min-width: $screen-lg) {
+    display: block;
+  }
+}
+
+.foreground {
+  opacity: 0.5;
+
+  @media (min-width: $screen-lg) {
+    opacity: 1;
+  }
+}
+
 .foreground,
 .background,
 .background > div {
@@ -206,4 +233,110 @@
   height: 100%;
   width: 100%;
   bottom: 0px;
+
+  img {
+    object-fit: cover !important;
+
+    @media (min-width: $screen-lg) {
+      object-fit: contain !important;
+    }
+  }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $screen-lg) {
+    flex-direction: row;
+  }
+
+  .left {
+    flex-basis: 350px;
+    margin-right: 100px;
+    flex-shrink: 0;
+  }
+
+  .right {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}
+
+.footer {
+  padding-top: 40px;
+  border-top: 1px solid $color-grey;
+  margin-top: 40px;
+
+  .block-1 {
+    display: flex;
+    padding-bottom: 40px;
+
+    .left {
+      flex-basis: 50%;
+      margin-right: 50px;
+    }
+
+    .right {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+
+      .content {
+        flex-direction: column;
+        display: flex;
+        flex-basis: 500px;
+
+        .logos {
+          margin-top: 50px;
+          display: flex;
+          justify-content: space-between;
+
+          > * {
+            width: 200px;
+            &:first-child {
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .block-2 {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $color-grey;
+    border-bottom: 1px solid $color-grey;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .left {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .copyright-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .copyright {
+      flex-shrink: 1;
+    }
+
+    .empire {
+      margin-left: 40px;
+      flex-shrink: 0;
+    }
+  }
 }

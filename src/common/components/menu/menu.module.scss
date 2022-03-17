@@ -27,3 +27,44 @@
     }
   }
 }
+
+.desktop-navigation {
+  display: none;
+
+  @media (min-width: $screen-lg) {
+    display: flex;
+  }
+}
+
+.mobile-navigation {
+  display: flex;
+
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+
+  .foldout {
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding-top: 24px;
+    background: #0d0d0d;
+    bottom: 0px;
+    z-index: 19;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 400ms ease-out;
+
+    @media (min-width: $screen-lg) {
+      display: none !important;
+    }
+
+    &.open {
+      transform: translateY(0px); //translateY(calc(0px + var(--headerHeight)));
+    }
+  }
+}
