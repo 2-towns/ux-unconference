@@ -188,7 +188,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`${css['scene']}`}>
+      <div className={`${css['scene']} ${css['no-overflow']}`}>
         <div className={css['hero']}>
           <Menu />
 
