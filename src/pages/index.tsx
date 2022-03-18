@@ -14,6 +14,98 @@ import Link from 'common/components/link'
 import ScrollDownIcon from 'assets/icons/scroll-down.svg'
 import PinIcon from 'assets/icons/pin.svg'
 import EFLogo from 'assets/images/ef-logo.svg'
+import PlusIcon from 'assets/icons/plus.svg'
+import MinusIcon from 'assets/icons/minus.svg'
+import DiscordIcon from 'assets/icons/discord.svg'
+
+const FAQ = [
+  {
+    title: 'What is an UNCONFERENCE?',
+    text: (
+      <>
+        An <u>unconference</u> is a participant-driven meeting. Avoiding hierarchical aspects of a conventional
+        conference, such as sponsored presentations and top-down organization. The attendees steer the discussions and
+        sessions at hand, leading to working groups being led by the participant who suggested it&apos;s topic or
+        directed open discussions of the session topic.
+      </>
+    ),
+  },
+  {
+    title: 'What is the event agenda?',
+    text: (
+      <>
+        An unconference is a participant-driven meeting. Avoiding hierarchical aspects of a conventional conference,
+        such as sponsored presentations and top-down organization. The attendees steer the discussions and sessions at
+        hand, leading to working groups being led by the participant who suggested it&apos;s topic or directed open
+        discussions of the session topic.
+      </>
+    ),
+  },
+  {
+    title: 'Do I need to be familiar with WEB3 UX design methodologies to attend?',
+    text: <>Bla</>,
+  },
+  {
+    title: 'Can I participate remotely?',
+    text: <>Bla</>,
+  },
+  {
+    title: 'How should I prepare for the UNCONFERENCE?',
+    text: <>Bla</>,
+  },
+  {
+    title: 'Can I present and promote my project?',
+    text: <>Bla</>,
+  },
+]
+
+const Accordion = () => {
+  const [open, setOpen] = React.useState<string | null>(null)
+
+  return (
+    <ul className={css['accordion']}>
+      {FAQ.map(faqItem => {
+        let className = css['accordion-item']
+
+        const selected = faqItem.title === open
+
+        if (selected) className += ` ${css['open']}`
+
+        return (
+          <li key={faqItem.title} onClick={() => setOpen(selected ? null : faqItem.title)} className={className}>
+            <div className={css['header']}>
+              <p className={css['title']}>{faqItem.title}</p>
+              {selected ? <MinusIcon /> : <PlusIcon />}
+            </div>
+            <p className={css['content']}>{faqItem.text}</p>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
+const Newsletter = () => {
+  const [email, setEmail] = React.useState('')
+
+  return (
+    <div className={css['newsletter']}>
+      <p className={css['grey']}>Subscribe to our newsletter</p>
+
+      <div className={css['input-submit']}>
+        <input
+          type="text"
+          value={email}
+          onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)}
+        />
+
+        <button className={`button sm grey`} onClick={() => alert('not implemented')}>
+          Subscribe
+        </button>
+      </div>
+    </div>
+  )
+}
 
 const useParallax = (elementRef: any) => {
   const [parallaxMultiplier, setParallaxMultiplier] = React.useState(0)
@@ -150,7 +242,7 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className={css['scene']} id="about">
+      <div className={`${css['scene']} ${css['grow-naturally']} ${css['grow-vertically']}`} id="about">
         <div className={css['about']}>
           <div className="section">
             <div className={css['info-block']}>
@@ -201,10 +293,12 @@ const Home: NextPage = () => {
       <div className="section" id="faq">
         <div className={css['faq']}>
           <div className={css['left']}>
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="extra-large-text">Frequently Asked Questions</h2>
           </div>
 
-          <div className={css['right']}></div>
+          <div className={css['right']}>
+            <Accordion />
+          </div>
         </div>
       </div>
 
@@ -212,12 +306,12 @@ const Home: NextPage = () => {
         <div className={css['footer']}>
           <div className={css['block-1']}>
             <div className={css['left']}>
-              <p className="large-text">
+              <p className={`${css['header']} extra-large-text`}>
                 <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that Zuck &
                 Mates can co-opt with their metabucks.
               </p>
 
-              <p className={`${css['grey']} tiny-text`}>
+              <p className={`${css['grey']}`}>
                 The unconference is a no-shill zone, designed to facilitate sharing and collaboration on research and
                 standardized work being done to improve the overall UX of the ecosystem.
               </p>
@@ -225,7 +319,7 @@ const Home: NextPage = () => {
 
             <div className={css['right']}>
               <div className={css['content']}>
-                <p>Made possible by:</p>
+                <p className="small-text">Made possible with support by:</p>
 
                 <div className={css['logos']}>
                   <DevconnectLogo />
@@ -237,11 +331,25 @@ const Home: NextPage = () => {
 
           <div className={css['block-2']}>
             <div className={css['left']}>
-              <p>UX CONF LOGO</p>
-              <p>UX CONF LOGO</p>
+              <div className={css['logo-block']}>
+                <Logo />
+                <p className={css['title']}>
+                  UX
+                  <br />
+                  UNCONF
+                  <br />
+                  <span>22 —</span>
+                </p>
+              </div>
+              <div className={css['social-media']}>
+                <p className={css['grey']}>Community</p>
+                <DiscordIcon />
+              </div>
             </div>
 
-            <div className={css['right']}>Right</div>
+            <div className={css['right']}>
+              <Newsletter />
+            </div>
           </div>
 
           <div className={css['copyright-block']}>

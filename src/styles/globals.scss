@@ -122,8 +122,16 @@ body {
     padding: 0 16px;
   }
 
-  &.blue {
-    color: $color-blue;
+  &.grey {
+    color: rgba(255, 255, 255, 0.5);
+    --icon-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      background: white;
+      color: black;
+      --icon-color: black;
+    }
   }
 
   &.blue {
@@ -207,4 +215,22 @@ a {
   * {
     fill: var(--icon-color);
   }
+}
+
+input {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  color: white;
+
+  &:active {
+    color: white;
+  }
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-top: 8px;
 }
