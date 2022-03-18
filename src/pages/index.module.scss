@@ -247,6 +247,7 @@
 .background {
   overflow: hidden;
   display: none;
+  opacity: 0.65;
 
   @media (min-width: $screen-xl) {
     display: block;
