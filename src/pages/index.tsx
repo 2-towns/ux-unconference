@@ -17,6 +17,7 @@ import EFLogo from 'assets/images/ef-logo.svg'
 import PlusIcon from 'assets/icons/plus.svg'
 import MinusIcon from 'assets/icons/minus.svg'
 import DiscordIcon from 'assets/icons/discord.svg'
+import { DESCRIPTION } from 'common/components/SEO'
 
 const FAQ = [
   {
@@ -82,6 +83,17 @@ const Accordion = () => {
         )
       })}
     </ul>
+  )
+}
+
+export const Copyright = () => {
+  return (
+    <div className={'copyright-block'}>
+      <p className={`copyright tiny-text`}>
+        © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
+      </p>
+      <p className={`empire uppercase bold`}>Empire</p>
+    </div>
   )
 }
 
@@ -217,13 +229,31 @@ const Home: NextPage = () => {
                   Apply
                 </Link>
 
-                <Link href="" className="button sm">
+                <Link
+                  href={(() => {
+                    const googleCalUrl = new URL(`https://www.google.com/calendar/render?action=TEMPLATE`)
+
+                    googleCalUrl.searchParams.append('text', `UX Unconference`)
+                    googleCalUrl.searchParams.append('details', DESCRIPTION)
+
+                    googleCalUrl.searchParams.append(
+                      'location',
+                      `Het West-Indisch Huis
+    Herenmarkt 99, 1013 EC Amsterdam, Netherlands`
+                    )
+
+                    googleCalUrl.searchParams.append('dates', `20220418T080000/20220418T160000`)
+
+                    return googleCalUrl.href
+                  })()}
+                  className="button sm"
+                >
                   Add to calendar
                 </Link>
               </div>
               <div className={css['location']}>
                 <PinIcon />
-                <p>
+                <p className="bold big-text">
                   Het West-Indisch Huis
                   <br />
                   Herenmarkt 99, 1013 EC Amsterdam, Netherlands
@@ -352,12 +382,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className={css['copyright-block']}>
-            <p className={`${css['copyright']} tiny-text`}>
-              © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
-            </p>
-            <p className={`${css['empire']} uppercase bold`}>Empire</p>
-          </div>
+          <Copyright />
         </div>
       </div>
     </div>

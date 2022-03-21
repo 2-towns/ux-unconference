@@ -13,7 +13,7 @@ export const DESCRIPTION =
   'Open-source design unconference and structured working groups helping to drive improved User Experience and usability standards forward for the decentralized eco-system. '
 export const SITE_URL = 'https://ux-unconference.org/'
 export const IMAGE_OG = `${SITE_URL}og-devconnect.png`
-export const SOCIAL_HANDLE = '@efdevconnect'
+export const SOCIAL_HANDLE = false //'@efdevconnect'
 
 export function SEO(props: SEOProps) {
   const router = useRouter()
@@ -44,11 +44,15 @@ export function SEO(props: SEOProps) {
       <meta property="og:image:width" content="1200" key="og_image_width" />
       <meta property="og:image:height" content="630" key="og_image_height" />
 
-      <meta name="twitter:site" content={SOCIAL_HANDLE} />
-      <meta name="twitter:card" content="summary_large_image" key="tw_card" />
-      <meta name="twitter:title" content={title} key="tw_title" />
-      <meta name="twitter:description" content={description} key="tw_description" />
-      <meta name="twitter:image" content={image} key="tw_image" />
+      {SOCIAL_HANDLE && (
+        <>
+          <meta name="twitter:site" content={SOCIAL_HANDLE} />
+          <meta name="twitter:card" content="summary_large_image" key="tw_card" />
+          <meta name="twitter:title" content={title} key="tw_title" />
+          <meta name="twitter:description" content={description} key="tw_description" />
+          <meta name="twitter:image" content={image} key="tw_image" />
+        </>
+      )}
     </Head>
   )
 }

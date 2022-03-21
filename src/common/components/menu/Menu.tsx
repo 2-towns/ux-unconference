@@ -1,6 +1,7 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
+import { Copyright } from 'pages'
 import css from './menu.module.scss'
 import IconCross from 'assets/icons/cross.svg'
 import Logo from 'assets/images/logo.svg'
@@ -15,15 +16,23 @@ const menuItems = [
     url: '#about',
   },
   {
-    text: 'Notion',
-    url: 'https://devconnect.org',
-  },
-  {
     text: 'FAQ',
     url: '#faq',
   },
   {
+    text: 'Notion',
+    url: 'https://devconnect.org',
+  },
+  {
     text: 'Devconnect',
+    url: 'https://devconnect.org',
+  },
+  {
+    text: 'Discord',
+    url: 'https://devconnect.org',
+  },
+  {
+    text: 'Livestream',
     url: 'https://devconnect.org',
   },
 ]
@@ -41,11 +50,15 @@ const DesktopNavigation = () => {
         }
 
         return (
-          <Link key={menuItem.text} href={menuItem.url}>
+          <Link indicateExternal key={menuItem.text} href={menuItem.url}>
             {menuItem.text}
           </Link>
         )
       })}
+
+      <Link href="" className="button orange-fill sm">
+        Apply
+      </Link>
     </div>
   )
 }
@@ -73,20 +86,53 @@ const MobileNavigation = () => {
   if (!mounted) return null
 
   return (
-    <div className={css['mobile-menu']}>
+    <div className={css['mobile-navigation']}>
       <div className={css['foldout-toggle']}>
-        <div className={css['icon']} onClick={() => setOpen(true)}>
-          <HamburgerIcon className="large-text-em" />
+        <Link href="" className="button orange-fill xs">
+          Apply
+        </Link>
+        <div className={css['clickable-surface']} onClick={() => setOpen(true)}>
+          <HamburgerIcon className="large-text-em icon" />
         </div>
       </div>
 
       {createPortal(
         <div className={`${open ? css['open'] : ''} ${css['foldout']}`}>
-          <div className={`${css['foldout-toggle']} clear`}>
-            {/* <p className="uppercase bold underline">Devconnect</p> */}
-            {/* ahhh */}
-            <div className={css['icon']} onClick={() => setOpen(false)}>
-              <IconCross />
+          <div className="section">
+            <div className={css['body']}>
+              <div className={css['header']}>
+                <Logos />
+                <div className={`${css['foldout-toggle']} clear`}>
+                  <div className={css['clickable-surface']} onClick={() => setOpen(false)}>
+                    <IconCross />
+                  </div>
+                </div>
+              </div>
+
+              <div className={css['nav']}>
+                {menuItems.map(menuItem => {
+                  if (menuItem.url.startsWith('#')) {
+                    return (
+                      <AnchorLink
+                        className={css['nav-item']}
+                        key={menuItem.text}
+                        href={menuItem.url}
+                        onClick={() => setOpen(false)}
+                      >
+                        {menuItem.text}
+                      </AnchorLink>
+                    )
+                  }
+
+                  return (
+                    <Link className={css['nav-item']} indicateExternal key={menuItem.text} href={menuItem.url}>
+                      {menuItem.text}
+                    </Link>
+                  )
+                })}
+              </div>
+
+              <Copyright />
             </div>
           </div>
         </div>,
@@ -96,20 +142,26 @@ const MobileNavigation = () => {
   )
 }
 
+const Logos = () => {
+  return (
+    <div className={css['logo-container']}>
+      <Logo />
+      <p className={css['title']}>
+        UX
+        <br />
+        UNCONF
+        <br />
+        <span>22 —</span>
+      </p>
+    </div>
+  )
+}
+
 const Menu = () => {
   return (
     <div className={`section`}>
       <div className={css['menu-container']}>
-        <div className={css['left']}>
-          <Logo />
-          <p className={css['title']}>
-            UX
-            <br />
-            UNCONF
-            <br />
-            <span>22 —</span>
-          </p>
-        </div>
+        <Logos />
         <div className={css['right']}>
           <DesktopNavigation />
           <MobileNavigation />

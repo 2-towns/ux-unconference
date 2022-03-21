@@ -8,6 +8,7 @@ import { FocusShader } from './jsm/shaders/FocusShader.js'
 import { OBJLoader } from './jsm/loaders/OBJLoader.js'
 import modelMale from './models/male02/male02.obj'
 import modelFemale from './models/female02/female02.obj'
+// import modelMale from './models/eth.obj'
 
 let camera, scene, renderer, mesh
 
@@ -41,6 +42,7 @@ function init(container) {
 
   const loader = new OBJLoader()
 
+  // Original colors:
   // loader.load(modelMale, function (object) {
   //   const positions = combineBuffer(object, 'position')
 
@@ -86,6 +88,7 @@ function init(container) {
   container.appendChild(renderer.domElement)
 
   parent = new THREE.Object3D()
+
   scene.add(parent)
 
   const grid = new THREE.Points(

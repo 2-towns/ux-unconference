@@ -141,8 +141,8 @@
 
     .location {
       display: flex;
-      --icon-color: #{$color-grey};
-      border-top: 1px solid $color-grey;
+      align-items: center;
+      border-top: 1px solid $standard-border-color;
       padding-top: 16px;
 
       @media (min-width: $screen-xl) {
@@ -153,7 +153,7 @@
       svg {
         margin-right: 8px;
         font-size: 32px;
-        color: $color-grey;
+        --icon-color: #{$color-grey};
       }
     }
   }
@@ -163,7 +163,7 @@
     flex-direction: row;
     padding: 16px 0px;
     margin-bottom: 25px;
-    border-bottom: 1px solid $color-grey;
+    border-bottom: 1px solid $standard-border-color;
 
     p {
       margin-left: 16px;
@@ -308,7 +308,7 @@
 
 .footer {
   padding-top: 40px;
-  border-top: 1px solid $color-grey;
+  border-top: 1px solid $standard-border-color;
   margin-top: 40px;
 
   .block-1 {
@@ -367,8 +367,8 @@
 
   .block-2 {
     display: flex;
-    border-top: 1px solid $color-grey;
-    border-bottom: 1px solid $color-grey;
+    border-top: 1px solid $standard-border-color;
+    border-bottom: 1px solid $standard-border-color;
     padding-top: 30px;
     padding-bottom: 30px;
     flex-direction: column;
@@ -424,7 +424,7 @@
       display: flex;
       flex-shrink: 0;
       justify-content: flex-end;
-      border-top: 1px solid $color-grey;
+      border-top: 1px solid $standard-border-color;
       margin-top: 30px;
       padding-top: 30px;
       flex-grow: 1;
@@ -463,23 +463,6 @@
           }
         }
       }
-    }
-  }
-
-  .copyright-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-    .copyright {
-      flex-shrink: 1;
-    }
-
-    .empire {
-      margin-left: 40px;
-      flex-shrink: 0;
     }
   }
 }

@@ -116,6 +116,12 @@ body {
     --icon-color: black;
   }
 
+  &.xs {
+    height: 36px;
+    @include small-text;
+    padding: 0 10px;
+  }
+
   &.sm {
     height: 48px;
     @include medium-text;
@@ -180,10 +186,11 @@ body {
     background: $color-orange;
     color: white;
     --icon-color: white;
+    border: 1px solid $color-orange;
 
     &:hover {
-      background: rgb(238, 238, 238);
-      color: rgb(128, 128, 128);
+      background: black;
+      color: $color-orange;
       --icon-color: rgb(128, 128, 128);
     }
   }
@@ -214,6 +221,23 @@ a {
 .icon {
   * {
     fill: var(--icon-color);
+  }
+}
+
+.copyright-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .copyright {
+    flex-shrink: 1;
+  }
+
+  .empire {
+    margin-left: 40px;
+    flex-shrink: 0;
   }
 }
 
