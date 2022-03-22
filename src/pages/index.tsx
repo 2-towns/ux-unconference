@@ -290,7 +290,7 @@ const Home: NextPage = () => {
     Herenmarkt 99, 1013 EC Amsterdam, Netherlands`
                     )
 
-                    googleCalUrl.searchParams.append('dates', `20220418T080000/20220418T160000`)
+                    googleCalUrl.searchParams.append('dates', `20220418T093000/20220418T180000`)
 
                     return googleCalUrl.href
                   })()}
