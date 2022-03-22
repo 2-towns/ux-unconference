@@ -411,7 +411,7 @@ const Home: NextPage = () => {
                   <Link href="https://devconnect.org/">
                     <DevconnectLogo />
                   </Link>
-                  <Link href="https://ethereum.org/en/foundation/">
+                  <Link href="https://ethereum.foundation/">
                     <EFLogo />
                   </Link>
                 </div>

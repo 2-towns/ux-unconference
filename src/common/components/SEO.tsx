@@ -9,8 +9,7 @@ interface SEOProps {
 }
 
 export const TITLE = 'W3D — UX Unconference Devconnect'
-export const DESCRIPTION =
-  'Open-source design unconference and structured working groups helping to drive improved User Experience and usability standards forward for the decentralized eco-system. '
+export const DESCRIPTION = 'Open-source design unconference and structured working groups'
 export const SITE_URL = 'https://ux.web3.design/'
 export const IMAGE_OG = `${SITE_URL}og-uxunconf.png`
 export const SOCIAL_HANDLE = false //'@efdevconnect'
