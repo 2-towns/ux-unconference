@@ -56,7 +56,7 @@ const DesktopNavigation = () => {
         )
       })}
 
-      <Link href="https://apply.web3.designs/" className="button orange-fill sm">
+      <Link href="https://apply.web3.design/" className="button orange-fill sm">
         Apply
       </Link>
     </div>
