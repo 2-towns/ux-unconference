@@ -43,15 +43,15 @@ export function SEO(props: SEOProps) {
       <meta property="og:image:width" content="1200" key="og_image_width" />
       <meta property="og:image:height" content="630" key="og_image_height" />
 
-      {SOCIAL_HANDLE && (
+      {/* {SOCIAL_HANDLE && (
         <>
-          <meta name="twitter:site" content={SOCIAL_HANDLE} />
-          <meta name="twitter:card" content="summary_large_image" key="tw_card" />
-          <meta name="twitter:title" content={title} key="tw_title" />
-          <meta name="twitter:description" content={description} key="tw_description" />
-          <meta name="twitter:image" content={image} key="tw_image" />
-        </>
-      )}
+          <meta name="twitter:site" content={SOCIAL_HANDLE} /> */}
+      <meta name="twitter:card" content="summary_large_image" key="tw_card" />
+      <meta name="twitter:title" content={title} key="tw_title" />
+      <meta name="twitter:description" content={description} key="tw_description" />
+      <meta name="twitter:image" content={image} key="tw_image" />
+      {/* </>
+      )} */}
     </Head>
   )
 }
