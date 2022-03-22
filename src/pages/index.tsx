@@ -116,8 +116,8 @@ export const Copyright = () => {
       <p className={`copyright tiny-text`}>
         © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
       </p>
-      <Link href="http://empire.venutres/">
-        <p className={`empire uppercase bold`}>Empire</p>
+      <Link href="http://empire.venutres/" className={'empire'}>
+        <p className={`uppercase bold`}>Empire</p>
       </Link>
     </div>
   )
