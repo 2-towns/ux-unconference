@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import { SEO } from 'common/components/SEO'
 import Logo from 'assets/images/logo.svg'
@@ -9,6 +8,7 @@ import Menu from 'common/components/menu'
 import HolographicAnimation from 'common/components/holographic/Holographic'
 import DevconnectLogo from 'assets/images/devconnect-logo.svg'
 import AmsterdamBackground from 'assets/images/amsterdam-background.png'
+import Zuck from 'assets/images/zuck.png'
 import AmsterdamForeground from 'assets/images/amsterdam-foreground.png'
 import Link from 'common/components/link'
 import ScrollDownIcon from 'assets/icons/scroll-down.svg'
@@ -35,28 +35,52 @@ const FAQ = [
     title: 'What is the event agenda?',
     text: (
       <>
-        An unconference is a participant-driven meeting. Avoiding hierarchical aspects of a conventional conference,
-        such as sponsored presentations and top-down organization. The attendees steer the discussions and sessions at
-        hand, leading to working groups being led by the participant who suggested it&apos;s topic or directed open
-        discussions of the session topic.
+        10:00 - 12:30 Lightning talks session. Lunch Break. Afternoon Onwards - Unconference dictated agenda and working
+        groups based on general consensus.
       </>
     ),
   },
   {
     title: 'Do I need to be familiar with WEB3 UX design methodologies to attend?',
-    text: <>Bla</>,
+    text: (
+      <>
+        No, the goal of the UNCONFERENCE is to bring together a breadth of participants from all layers of the Web3 Tech
+        Stack to share their painpoints and potential solutions they would like to see come to fruition. The value is
+        created through examining the diverse sets of perspectives and aiming for consistent mental models that can be
+        easily adopted and shared amongst the eco-system.
+      </>
+    ),
   },
   {
     title: 'Can I participate remotely?',
-    text: <>Bla</>,
+    text: (
+      <>
+        The morning lighting talks will be recorded and shared for all to view. Due to the collaborative and in-person
+        nature of the UNCONFERENCE working groups it is not possible to facilitate them live remotely during the actual
+        event. However, the outputs and additional educational resources will be made public with open calls to action
+        for any interested parties to join the conversation and continue post the UNCONFERENCE. You can join our discord
+        community here to keep updated and engaged.
+      </>
+    ),
   },
   {
     title: 'How should I prepare for the UNCONFERENCE?',
-    text: <>Bla</>,
+    text: (
+      <>
+        Come ready to participate and be open to collaboration. The intent should not be to shill your particular
+        solution but to learn about and explore alternatives that you may have overlooked or missed in the past.
+      </>
+    ),
   },
   {
     title: 'Can I present and promote my project?',
-    text: <>Bla</>,
+    text: (
+      <>
+        The Unconference has been designed to be a no-shill zone and therefore has no product promotion oriented talks.
+        Therefore, if you do wish to apply to present something please frame it in the context of the UX challenge you
+        are trying to solve for or hoping to gain additional community involvement with.
+      </>
+    ),
   },
 ]
 
@@ -92,32 +116,58 @@ export const Copyright = () => {
       <p className={`copyright tiny-text`}>
         © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
       </p>
-      <p className={`empire uppercase bold`}>Empire</p>
+      <Link href="http://empire.venutres/">
+        <p className={`empire uppercase bold`}>Empire</p>
+      </Link>
     </div>
   )
 }
 
-const Newsletter = () => {
-  const [email, setEmail] = React.useState('')
+const Newsletter = React.memo(() => {
+  const ref = useRef<HTMLFormElement>(null)
 
   return (
     <div className={css['newsletter']}>
       <p className={css['grey']}>Subscribe to our newsletter</p>
 
       <div className={css['input-submit']}>
-        <input
-          type="text"
-          value={email}
-          onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)}
-        />
+        <div id="mc_embed_signup">
+          <form
+            ref={ref}
+            action="https://studio.us14.list-manage.com/subscribe/post?u=75297465be6b369bc5599ec9f&amp;id=4a44b4f9dc"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
+            noValidate
+          >
+            <div id="mc_embed_signup_scroll">
+              <div className="mc-field-group">
+                <input type="email" name="EMAIL" className="required email" id="mce-EMAIL" />
+              </div>
 
-        <button className={`button sm grey`} onClick={() => alert('not implemented')}>
+              <div id="mce-responses" className="clear foot">
+                <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
+                <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
+              </div>
+
+              <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+                <input type="text" name="b_75297465be6b369bc5599ec9f_4a44b4f9dc" tabIndex={-1} />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <button className={`button xs grey`} onClick={() => ref.current && ref.current.submit()}>
           Subscribe
         </button>
       </div>
     </div>
   )
-}
+})
+
+Newsletter.displayName = 'Newsletter'
 
 const useParallax = (elementRef: any) => {
   const [parallaxMultiplier, setParallaxMultiplier] = React.useState(0)
@@ -194,11 +244,6 @@ const Home: NextPage = () => {
   return (
     <div>
       <SEO />
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
 
       <div className={`${css['scene']} ${css['no-overflow']}`}>
         <div className={css['hero']}>
@@ -211,7 +256,9 @@ const Home: NextPage = () => {
                 <br />
                 UNCONFERENCE
               </h1>
-              <DevconnectLogo />
+              <Link href="https://devconnect.org/">
+                <DevconnectLogo />
+              </Link>
             </div>
           </div>
 
@@ -225,11 +272,12 @@ const Home: NextPage = () => {
                 </p>
               </div>
               <div className={css['call-to-action']}>
-                <Link href="" className="button sm">
+                <Link href="https://apply.web3.designs/" className="button sm">
                   Apply
                 </Link>
 
                 <Link
+                  // indicateExternal
                   href={(() => {
                     const googleCalUrl = new URL(`https://www.google.com/calendar/render?action=TEMPLATE`)
 
@@ -253,11 +301,13 @@ const Home: NextPage = () => {
               </div>
               <div className={css['location']}>
                 <PinIcon />
-                <p className="bold big-text">
-                  Het West-Indisch Huis
-                  <br />
-                  Herenmarkt 99, 1013 EC Amsterdam, Netherlands
-                </p>
+                <Link href="https://g.page/het-west-indisch-huis?share">
+                  <p className="bold">
+                    Het West-Indisch Huis
+                    <br />
+                    Herenmarkt 99, 1013 EC Amsterdam, Netherlands
+                  </p>
+                </Link>
               </div>
             </div>
             <div className={css['scroll-to-continue']}>
@@ -304,11 +354,11 @@ const Home: NextPage = () => {
                 </div>
 
                 <div className={css['call-to-action']}>
-                  <Link href="" className="button sm">
+                  <Link href="https://workspace.web3.design/" className="button sm">
                     Notion workspace
                   </Link>
 
-                  <Link href="" className="button sm">
+                  <Link href="https://discord.gg/FsCFPMTSm9" className="button sm">
                     Discord
                   </Link>
                 </div>
@@ -336,10 +386,16 @@ const Home: NextPage = () => {
         <div className={css['footer']}>
           <div className={css['block-1']}>
             <div className={css['left']}>
-              <p className={`${css['header']} extra-large-text`}>
-                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that Zuck &
-                Mates can co-opt with their metabucks.
-              </p>
+              <div className={`${css['header']} extra-large-text`}>
+                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that{' '}
+                <span className={css['zuck-friends']}>
+                  <div className={css['web2']}>
+                    <Image src={Zuck} layout="fill" objectFit="cover" alt="Zuckerberg at hearing" />
+                  </div>
+                  Zuck & Mates
+                </span>{' '}
+                can co-opt with their metabucks.
+              </div>
 
               <p className={`${css['grey']}`}>
                 The unconference is a no-shill zone, designed to facilitate sharing and collaboration on research and
@@ -352,8 +408,12 @@ const Home: NextPage = () => {
                 <p className="small-text">Made possible with support by:</p>
 
                 <div className={css['logos']}>
-                  <DevconnectLogo />
-                  <EFLogo />
+                  <Link href="https://devconnect.org/">
+                    <DevconnectLogo />
+                  </Link>
+                  <Link href="https://ethereum.org/en/foundation/">
+                    <EFLogo />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -373,7 +433,9 @@ const Home: NextPage = () => {
               </div>
               <div className={css['social-media']}>
                 <p className={css['grey']}>Community</p>
-                <DiscordIcon />
+                <Link href="https://discord.gg/FsCFPMTSm9">
+                  <DiscordIcon />
+                </Link>
               </div>
             </div>
 

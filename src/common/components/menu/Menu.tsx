@@ -21,7 +21,7 @@ const menuItems = [
   },
   {
     text: 'Notion',
-    url: 'https://devconnect.org',
+    url: 'https://workspace.web3.design/',
   },
   {
     text: 'Devconnect',
@@ -29,12 +29,12 @@ const menuItems = [
   },
   {
     text: 'Discord',
-    url: 'https://devconnect.org',
+    url: 'https://discord.gg/FsCFPMTSm9',
   },
-  {
-    text: 'Livestream',
-    url: 'https://devconnect.org',
-  },
+  // {
+  //   text: 'Livestream',
+  //   url: 'https://devconnect.org',
+  // },
 ]
 
 const DesktopNavigation = () => {
@@ -50,13 +50,13 @@ const DesktopNavigation = () => {
         }
 
         return (
-          <Link indicateExternal key={menuItem.text} href={menuItem.url}>
+          <Link key={menuItem.text} href={menuItem.url}>
             {menuItem.text}
           </Link>
         )
       })}
 
-      <Link href="" className="button orange-fill sm">
+      <Link href="https://apply.web3.designs/" className="button orange-fill sm">
         Apply
       </Link>
     </div>
@@ -88,7 +88,7 @@ const MobileNavigation = () => {
   return (
     <div className={css['mobile-navigation']}>
       <div className={css['foldout-toggle']}>
-        <Link href="" className="button orange-fill xs">
+        <Link href="https://apply.web3.design" className="button orange-fill xs">
           Apply
         </Link>
         <div className={css['clickable-surface']} onClick={() => setOpen(true)}>
@@ -125,7 +125,7 @@ const MobileNavigation = () => {
                   }
 
                   return (
-                    <Link className={css['nav-item']} indicateExternal key={menuItem.text} href={menuItem.url}>
+                    <Link className={css['nav-item']} key={menuItem.text} href={menuItem.url}>
                       {menuItem.text}
                     </Link>
                   )

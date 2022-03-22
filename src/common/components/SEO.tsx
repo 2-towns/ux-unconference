@@ -8,16 +8,16 @@ interface SEOProps {
   imageUrl?: string
 }
 
-export const TITLE = 'UX Unconference'
+export const TITLE = 'W3D — UX Unconference Devconnect'
 export const DESCRIPTION =
   'Open-source design unconference and structured working groups helping to drive improved User Experience and usability standards forward for the decentralized eco-system. '
 export const SITE_URL = 'https://ux-unconference.org/'
-export const IMAGE_OG = `${SITE_URL}og-devconnect.png`
+export const IMAGE_OG = `${SITE_URL}og-uxunconf.png`
 export const SOCIAL_HANDLE = false //'@efdevconnect'
 
 export function SEO(props: SEOProps) {
   const router = useRouter()
-  const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE} · Amsterdam`
+  const title = props.title ? `${props.title} · ${TITLE}` : `${TITLE}`
   const description = props.description || DESCRIPTION
   const image = props.imageUrl || IMAGE_OG
   const url = router.route === '/' ? SITE_URL : SITE_URL.replace(/\/$/, '') + router.asPath.split('?')[0]
