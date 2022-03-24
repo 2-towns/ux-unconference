@@ -44,7 +44,8 @@
   }
 
   > a {
-    font-weight: bold;
+    text-transform: uppercase;
+    font-weight: normal;
 
     &:first-child {
       margin-left: 0px;
@@ -133,7 +134,8 @@
       margin-top: 16px;
 
       .nav-item {
-        font-weight: bold;
+        text-transform: uppercase;
+        font-weight: normal;
         display: block;
         border-bottom: 1px solid $color-grey;
         padding: 16px 0px;

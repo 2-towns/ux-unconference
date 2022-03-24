@@ -27,7 +27,7 @@ body {
     grid-column: 2 / 3;
   }
 
-  .expand {
+  > .expand {
     grid-column: 1 / 4;
   }
 }

@@ -116,7 +116,7 @@ export const Copyright = () => {
       <p className={`copyright tiny-text`}>
         © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
       </p>
-      <Link href="http://empire.venutres/" className={'empire'}>
+      <Link href="http://empire.venture/" className={'empire'}>
         <p className={`uppercase bold`}>Empire</p>
       </Link>
     </div>
@@ -302,7 +302,7 @@ const Home: NextPage = () => {
               <div className={css['location']}>
                 <PinIcon />
                 <Link href="https://g.page/het-west-indisch-huis?share">
-                  <p className="bold">
+                  <p>
                     Het West-Indisch Huis
                     <br />
                     Herenmarkt 99, 1013 EC Amsterdam, Netherlands
