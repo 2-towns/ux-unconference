@@ -343,11 +343,13 @@
           position: relative;
           cursor: pointer;
 
-          &:hover {
-            .web2 {
-              display: block;
-              opacity: 1;
-              transform: rotate(30deg);
+          @media (hover: hover) {
+            &:hover {
+              .web2 {
+                display: block;
+                opacity: 1;
+                transform: rotate(30deg);
+              }
             }
           }
 
