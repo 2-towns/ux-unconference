@@ -20,10 +20,6 @@ const menuItems = [
     url: '#faq',
   },
   {
-    text: 'Notion',
-    url: 'https://workspace.web3.design/',
-  },
-  {
     text: 'Devconnect',
     url: 'https://devconnect.org',
   },
@@ -56,8 +52,8 @@ const DesktopNavigation = () => {
         )
       })}
 
-      <Link href="https://apply.web3.design/" className="button orange-fill sm">
-        Apply
+      <Link href="https://workspace.web3.design/" className="button orange-fill sm">
+        Notion
       </Link>
     </div>
   )

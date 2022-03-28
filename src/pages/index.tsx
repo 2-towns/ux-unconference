@@ -272,8 +272,8 @@ const Home: NextPage = () => {
                 </p>
               </div>
               <div className={css['call-to-action']}>
-                <Link href="https://apply.web3.design/" className="button sm">
-                  Apply
+                <Link href="https://workspace.web3.design/" className="button sm">
+                  Notion
                 </Link>
 
                 <Link
