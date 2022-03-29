@@ -84,8 +84,8 @@ const MobileNavigation = () => {
   return (
     <div className={css['mobile-navigation']}>
       <div className={css['foldout-toggle']}>
-        <Link href="https://apply.web3.design" className="button orange-fill xs">
-          Apply
+        <Link href="https://workspace.web3.design/" className="button orange-fill xs">
+          Notion
         </Link>
         <div className={css['clickable-surface']} onClick={() => setOpen(true)}>
           <HamburgerIcon className="large-text-em icon" />
