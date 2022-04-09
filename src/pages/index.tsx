@@ -279,7 +279,9 @@ const Home: NextPage = () => {
                 <Link
                   // indicateExternal
                   href={(() => {
-                    const googleCalUrl = new URL(`https://www.google.com/calendar/render?action=TEMPLATE`)
+                    const googleCalUrl = new URL(
+                      `https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe/Amsterdam`
+                    )
 
                     googleCalUrl.searchParams.append('text', `UX Unconference`)
                     googleCalUrl.searchParams.append('details', DESCRIPTION)
