@@ -147,7 +147,7 @@ const Logos = () => {
         <br />
         UNCONF
         <br />
-        <span>22 —</span>
+        <span>23 —</span>
       </p>
     </div>
   )

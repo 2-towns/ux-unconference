@@ -7,9 +7,9 @@ import css from './index.module.scss'
 import Menu from 'common/components/menu'
 import HolographicAnimation from 'common/components/holographic/Holographic'
 import DevconnectLogo from 'assets/images/devconnect-logo.svg'
-import AmsterdamBackground from 'assets/images/amsterdam-background.png'
+import AmsterdamBackground from 'assets/images/istanbul-background.png'
 import Zuck from 'assets/images/zuck.png'
-import AmsterdamForeground from 'assets/images/amsterdam-foreground.png'
+import AmsterdamForeground from 'assets/images/istanbul-foreground.png'
 import Link from 'common/components/link'
 import ScrollDownIcon from 'assets/icons/scroll-down.svg'
 import PinIcon from 'assets/icons/pin.svg'
@@ -114,7 +114,8 @@ export const Copyright = () => {
   return (
     <div className={'copyright-block'}>
       <p className={`copyright tiny-text`}>
-        © 2022 Web3 Design, EMPIRE. Trademarks and brands are the property of their respective owners.
+        © {new Date().getFullYear()} Web3 Design, EMPIRE. Trademarks and brands are the property of their respective
+        owners.
       </p>
       <Link href="http://empire.ventures" className={'empire'}>
         <p className={`uppercase bold`}>Empire</p>
@@ -251,8 +252,8 @@ const Home: NextPage = () => {
 
           <div className="section" id="title-section">
             <div className={css['title-block']}>
-              <h1 className="title bold">
-                UX<span style={{ color: '#7D7D7D' }}>AMS/XXX/22</span>
+              <h1 className="title">
+                UX<span style={{ color: '#FF2E00' }}>ISTANBUL</span>23
                 <br />
                 UNCONFERENCE
               </h1>
@@ -265,10 +266,10 @@ const Home: NextPage = () => {
           <div className="section">
             <div className={css['bottom-block']}>
               <div className={css['date-block']}>
-                <p className={`${css['date']}`}>APR 18 —</p>
+                <p className={`${css['date']}`}>Nov 14 —</p>
                 <p className={css['where']}>
                   Devconnect
-                  <span>Amsterdam</span>
+                  <span>Istanbul</span>
                 </p>
               </div>
               <div className={css['call-to-action']}>
@@ -303,13 +304,21 @@ const Home: NextPage = () => {
               </div>
               <div className={css['location']}>
                 <PinIcon />
-                <Link href="https://g.page/het-west-indisch-huis?share">
+
+                <Link href="https://goo.gl/maps/YsetW8TvwzzDor43A">
+                  <p>
+                    <span className="bold">Istanbul Congress Center</span> <br />
+                    Darülbedai Cad. No:3 34367 Şişli Maçka <br />
+                    <span className="orange">İstanbul/Türkiye</span>
+                  </p>
+                </Link>
+                {/* <Link href="https://g.page/het-west-indisch-huis?share">
                   <p>
                     Het West-Indisch Huis
                     <br />
                     Herenmarkt 99, 1013 EC Amsterdam, Netherlands
                   </p>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className={css['scroll-to-continue']}>
@@ -394,9 +403,9 @@ const Home: NextPage = () => {
                   <div className={css['web2']}>
                     <Image src={Zuck} layout="fill" objectFit="cover" alt="Zuckerberg at hearing" />
                   </div>
-                  Zuck & Mates
+                  Elon & Zuck{' '}
                 </span>{' '}
-                can co-opt with their metabucks.
+                can co-opt with their Xs and Metas.
               </div>
 
               <p className={`${css['grey']}`}>
@@ -430,7 +439,7 @@ const Home: NextPage = () => {
                   <br />
                   UNCONF
                   <br />
-                  <span>22 —</span>
+                  <span>23 —</span>
                 </p>
               </div>
               <div className={css['social-media']}>
