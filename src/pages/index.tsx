@@ -281,7 +281,7 @@ const Home: NextPage = () => {
                   // indicateExternal
                   href={(() => {
                     const googleCalUrl = new URL(
-                      `https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe/Amsterdam`
+                      `https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe/Istanbul`
                     )
 
                     googleCalUrl.searchParams.append('text', `UX Unconference`)
@@ -289,11 +289,11 @@ const Home: NextPage = () => {
 
                     googleCalUrl.searchParams.append(
                       'location',
-                      `Het West-Indisch Huis
-    Herenmarkt 99, 1013 EC Amsterdam, Netherlands`
+                      `Istanbul Congress Center
+                      Darülbedai Cad. No:3 34367 Şişli Maçka, İstanbul, Türkiye`
                     )
 
-                    googleCalUrl.searchParams.append('dates', `20220418T093000/20220418T180000`)
+                    googleCalUrl.searchParams.append('dates', `20231114T093000/20231114T180000`)
 
                     return googleCalUrl.href
                   })()}
