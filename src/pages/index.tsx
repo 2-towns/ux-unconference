@@ -266,7 +266,7 @@ const Home: NextPage = () => {
           <div className="section">
             <div className={css['bottom-block']}>
               <div className={css['date-block']}>
-                <p className={`${css['date']}`}>Nov 14 —</p>
+                <p className={`${css['date']}`}>Nov 16 —</p>
                 <p className={css['where']}>
                   Devconnect
                   <span>Istanbul</span>
