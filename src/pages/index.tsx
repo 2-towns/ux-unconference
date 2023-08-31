@@ -293,7 +293,7 @@ const Home: NextPage = () => {
                       Darülbedai Cad. No:3 34367 Şişli Maçka, İstanbul, Türkiye`
                     )
 
-                    googleCalUrl.searchParams.append('dates', `20231114T093000/20231114T180000`)
+                    googleCalUrl.searchParams.append('dates', `20231116T093000/20231116T180000`)
 
                     return googleCalUrl.href
                   })()}
