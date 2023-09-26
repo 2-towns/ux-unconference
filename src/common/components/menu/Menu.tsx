@@ -52,7 +52,11 @@ const DesktopNavigation = () => {
         )
       })}
 
-      <Link href="https://workspace.web3.design/" className="button orange-fill sm">
+      <Link href="https://noteforms.com/forms/ux-unconf-devconnect-ist-vcsn9e" className="button orange-fill sm">
+        Apply
+      </Link>
+
+      <Link href="https://workspace.web3.design/" className="button sm">
         Notion
       </Link>
     </div>
