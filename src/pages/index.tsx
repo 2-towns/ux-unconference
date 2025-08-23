@@ -18,6 +18,7 @@ import PlusIcon from 'assets/icons/plus.svg'
 import MinusIcon from 'assets/icons/minus.svg'
 import DiscordIcon from 'assets/icons/discord.svg'
 import { DESCRIPTION } from 'common/components/SEO'
+import { CyberpunkScene } from 'common/components/cyberpunk-scene/CyberpunkScene'
 
 const FAQ = [
   {
@@ -230,13 +231,14 @@ const Background = () => {
   return (
     <>
       <div className={css['background']} ref={ref}>
-        <div style={parallax(parallaxMultiplier)}>
+        <Image src={"/devconnect-arg-text.svg"} layout="fill" alt='ARG'></Image>
+        {/* <div style={parallax(parallaxMultiplier)}>
           <Image src={AmsterdamBackground} alt="Background" layout="fill" objectFit="contain" objectPosition="bottom" />
-        </div>
+        </div> */}
       </div>
-      <div className={css['foreground']}>
+      {/* <div className={css['foreground']}>
         <Image src={AmsterdamForeground} alt="Background" layout="fill" objectFit="contain" objectPosition="bottom" />
-      </div>
+      </div> */}
     </>
   )
 }
@@ -253,7 +255,8 @@ const Home: NextPage = () => {
           <div className="section" id="title-section">
             <div className={css['title-block']}>
               <h1 className="title">
-                UX<span style={{ color: '#FF2E00' }}>ISTANBUL</span>23
+                UX<span className={css['conference-name']}>ARGENTINA</span>
+                <span className={css['year']}>25</span>
                 <br />
                 UNCONFERENCE
               </h1>
@@ -272,7 +275,7 @@ const Home: NextPage = () => {
                   <span>Istanbul</span>
                 </p>
               </div>
-              <div className={css['call-to-action']}>
+              {/* <div className={css['call-to-action']}>
                 <Link
                   href="https://noteforms.com/forms/ux-unconf-devconnect-ist-vcsn9e"
                   className="button orange-fill sm"
@@ -308,15 +311,15 @@ const Home: NextPage = () => {
                 >
                   Add to calendar
                 </Link>
-              </div>
+              </div> */}
               <div className={css['location']}>
-                <PinIcon />
+                <PinIcon width={50} height={50} />
 
                 <Link href="https://goo.gl/maps/YsetW8TvwzzDor43A">
                   <p>
-                    <span className="bold">Istanbul Congress Center</span> <br />
-                    Darülbedai Cad. No:3 34367 Şişli Maçka <br />
-                    <span className="orange">İstanbul/Türkiye</span>
+                    <span className={"bold " + css['location-name']}>La Rural</span> <br />
+                    Palermo — Av. Sarmiento 2704, C1425 Cdad. <br />
+                    <span className="orange">Buenos Aires, Argentina</span>
                   </p>
                 </Link>
                 {/* <Link href="https://g.page/het-west-indisch-huis?share">
@@ -329,13 +332,14 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className={css['scroll-to-continue']}>
-              <ScrollDownIcon />
-              <p>Scroll to continue</p>
+              {/* <ScrollDownIcon />
+              <p>Scroll to continue</p> */}
             </div>
           </div>
 
           <div className={css['animated-background']}>
-            <HolographicAnimation />
+            <CyberpunkScene/>
+            {/* <HolographicAnimation /> */}
           </div>
         </div>
       </div>
@@ -446,7 +450,7 @@ const Home: NextPage = () => {
                   <br />
                   UNCONF
                   <br />
-                  <span>23 —</span>
+                  <span>25 —</span>
                 </p>
               </div>
               <div className={css['social-media']}>

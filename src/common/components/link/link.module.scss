@@ -1,4 +1,6 @@
 .link {
+  font-weight: bold;
+  
   &:not(:global(.button), .button) {
     &:hover {
       [data-type='link-text'] {

@@ -151,7 +151,7 @@ const Logos = () => {
         <br />
         UNCONF
         <br />
-        <span>23 —</span>
+        <span>25 —</span>
       </p>
     </div>
   )
@@ -163,8 +163,8 @@ const Menu = () => {
       <div className={css['menu-container']}>
         <Logos />
         <div className={css['right']}>
-          <DesktopNavigation />
-          <MobileNavigation />
+          {/* <DesktopNavigation />
+          <MobileNavigation /> */}
         </div>
       </div>
     </div>

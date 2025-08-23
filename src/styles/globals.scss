@@ -169,8 +169,8 @@ body {
 
   &.orange {
     background: white;
-    color: $color-orange;
-    --icon-color: #{$color-orange};
+    color: $color-primary;
+    --icon-color: #{$color-primary};
 
     &:hover {
       background: rgb(238, 238, 238);
@@ -183,14 +183,14 @@ body {
   }
 
   &.orange-fill {
-    background: $color-orange;
+    background: $color-primary;
     color: white;
     --icon-color: white;
-    border: 1px solid $color-orange;
+    border: 1px solid $color-primary;
 
     &:hover {
       background: black;
-      color: $color-orange;
+      color: $color-primary;
       --icon-color: rgb(128, 128, 128);
     }
   }
@@ -260,5 +260,11 @@ input {
 }
 
 .orange {
-  color: $color-orange;
+  color: $color-primary;
+}
+
+.threejs { 
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }

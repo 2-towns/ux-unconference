@@ -69,10 +69,16 @@
     }
 
     span {
-      font-weight: 700;
       font-family: $font-tertiary;
+    }
+
+    .conference-name {
+      margin: 0px 0.21em;
+      color: $color-primary;
+    }
+
+    .year { 
       color: $color-grey;
-      margin: 0px 0.21m;
     }
   }
 
@@ -126,7 +132,7 @@
           @include tiny-text;
           font-weight: 700;
           font-family: $font-primary;
-          color: $color-orange;
+          color: $color-primary;
         }
       }
     }
@@ -143,7 +149,7 @@
 
     .location {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       border-top: 1px solid $standard-border-color;
       padding-top: 16px;
       padding-bottom: 16px;
@@ -152,6 +158,16 @@
         padding-top: 0px;
         padding-bottom: 0px;
         border-top: none;
+      }
+
+      .location-name { 
+        font-family: Inter;
+        font-weight: 700;
+        font-style: bold;
+        font-size: 24px;
+        line-height: 120%;
+        margin-bottom: 6px;
+        display: inline-block;
       }
 
       a {
@@ -272,6 +288,12 @@
   @media (min-width: $screen-xl) {
     opacity: 1;
   }
+}
+
+.background {
+  background-image: url(/devconnect-arg-bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .foreground,
@@ -443,8 +465,12 @@
           @include tiny-text;
           margin-left: 15px;
 
+          .conference-name { 
+            color: $color-primary;
+          }
+
           span {
-            color: $color-orange;
+            color: $color-primary;
           }
         }
       }
