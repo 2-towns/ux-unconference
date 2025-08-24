@@ -7,8 +7,9 @@ type LinkProps = {
   children: ReactNode
   indicateExternal?: boolean // Whether or not to add an external link indicator (if the url is a FQDN)
   allowDrag?: boolean
-  to: string
-  [key: string]: any
+  href: string
+  external?: string 
+  className?: string
 }
 
 export const useDraggableLink = (thresholdPixels = 5) => {
