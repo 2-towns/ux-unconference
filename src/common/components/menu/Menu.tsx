@@ -1,6 +1,5 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
-import Image from 'next/image'
 import { Copyright } from 'pages'
 import css from './menu.module.scss'
 import IconCross from 'assets/icons/cross.svg'
@@ -52,7 +51,7 @@ const DesktopNavigation = () => {
         )
       })}
 
-      <Link href="https://noteforms.com/forms/ux-unconf-devconnect-ist-vcsn9e" className="button orange-fill sm">
+      <Link href="https://apply.web3.design/" className="button orange-fill sm">
         Apply
       </Link>
 
@@ -163,8 +162,8 @@ const Menu = () => {
       <div className={css['menu-container']}>
         <Logos />
         <div className={css['right']}>
-          {/* <DesktopNavigation />
-          <MobileNavigation /> */}
+           <DesktopNavigation />
+          <MobileNavigation /> 
         </div>
       </div>
     </div>

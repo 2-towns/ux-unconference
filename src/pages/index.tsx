@@ -5,20 +5,15 @@ import { SEO } from 'common/components/SEO'
 import Logo from 'assets/images/logo.svg'
 import css from './index.module.scss'
 import Menu from 'common/components/menu'
-import HolographicAnimation from 'common/components/holographic/Holographic'
 import DevconnectLogo from 'assets/images/devconnect-logo.svg'
-import AmsterdamBackground from 'assets/images/istanbul-background.png'
-import Zuck from 'assets/images/zuck.png'
-import AmsterdamForeground from 'assets/images/istanbul-foreground.png'
 import Link from 'common/components/link'
-import ScrollDownIcon from 'assets/icons/scroll-down.svg'
 import PinIcon from 'assets/icons/pin.svg'
 import EFLogo from 'assets/images/ef-logo.svg'
 import PlusIcon from 'assets/icons/plus.svg'
 import MinusIcon from 'assets/icons/minus.svg'
 import DiscordIcon from 'assets/icons/discord.svg'
-import { DESCRIPTION } from 'common/components/SEO'
 import { CyberpunkScene } from 'common/components/cyberpunk-scene/CyberpunkScene'
+import { DESCRIPTION } from 'common/components/SEO'
 
 const FAQ = [
   {
@@ -275,9 +270,9 @@ const Home: NextPage = () => {
                   <span>Argentina</span>
                 </p>
               </div>
-              {/* <div className={css['call-to-action']}>
+               <div className={css['call-to-action']}>
                 <Link
-                  href="https://noteforms.com/forms/ux-unconf-devconnect-ist-vcsn9e"
+                  href="https://apply.we3.design"
                   className="button orange-fill sm"
                 >
                   Apply
@@ -289,29 +284,12 @@ const Home: NextPage = () => {
 
                 <Link
                   // indicateExternal
-                  href={(() => {
-                    const googleCalUrl = new URL(
-                      `https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe/Istanbul`
-                    )
-
-                    googleCalUrl.searchParams.append('text', `UX Unconference`)
-                    googleCalUrl.searchParams.append('details', DESCRIPTION)
-
-                    googleCalUrl.searchParams.append(
-                      'location',
-                      `Istanbul Congress Center
-                      Darülbedai Cad. No:3 34367 Şişli Maçka, İstanbul, Türkiye`
-                    )
-
-                    googleCalUrl.searchParams.append('dates', `20231116T093000/20231116T180000`)
-
-                    return googleCalUrl.href
-                  })()}
+                  href={"https://www.google.com/calendar/render?action=TEMPLATE&ctz=Europe/Buenos_Aires&text=La%20Rural%20(Palermo)&details=Visit%20to%20La%20Rural%2C%20Palermo.&location=Palermo%20%E2%80%94%20Av.%20Sarmiento%202704%2C%20C1425%20Cdad.%2C%20Buenos%20Aires%2C%20Argentina&dates=20251118/20251119"}
                   className="button sm"
                 >
                   Add to calendar
                 </Link>
-              </div> */}
+              </div> 
               <div className={css['location']}>
                 <PinIcon width={50} height={50} />
 
