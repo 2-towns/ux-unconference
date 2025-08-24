@@ -1,0 +1,9 @@
+[build]
+  command = "npm ci && npm run build"
+  publish = ".next" # the plugin wires this into Netlify Functions/Edge
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "18"   # or 20
