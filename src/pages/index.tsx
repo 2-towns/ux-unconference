@@ -269,10 +269,10 @@ const Home: NextPage = () => {
           <div className="section">
             <div className={css['bottom-block']}>
               <div className={css['date-block']}>
-                <p className={`${css['date']}`}>Nov 16 —</p>
+                <p className={`${css['date']}`}>Nov 18 —</p>
                 <p className={css['where']}>
                   Devconnect
-                  <span>Istanbul</span>
+                  <span>Argentina</span>
                 </p>
               </div>
               {/* <div className={css['call-to-action']}>
@@ -315,7 +315,7 @@ const Home: NextPage = () => {
               <div className={css['location']}>
                 <PinIcon width={50} height={50} />
 
-                <Link href="https://goo.gl/maps/YsetW8TvwzzDor43A">
+                <Link href="https://www.google.com/maps/place/La+Rural/@-34.5797805,-58.4235076,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb59cd6452553:0x6b521307d135059a!8m2!3d-34.5797805!4d-58.4209327!16s%2Fg%2F1ymyp0my0?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D">
                   <p>
                     <span className={"bold " + css['location-name']}>La Rural</span> <br />
                     Palermo — Av. Sarmiento 2704, C1425 Cdad. <br />
@@ -367,11 +367,7 @@ const Home: NextPage = () => {
                   <h3 className={css['header']}>Objective</h3>
 
                   <p className={css['grey']}>
-                    Enable cross pollination of fresh perspectives and emerging UX methodologies. Bringing together
-                    developers and designers in the ecosystem working at the various layers of the Web3 Tech Stack to
-                    share their unique solutions and encourage interoperability amongst various systems. Helping to
-                    create consistent and sustainable mental models for the users to easily grasp when interacting with
-                    the entire Web 3 Tech Stack.
+                    Enable cross-pollination of fresh perspectives, emerging UX methodologies, and AI-driven innovations, bringing together developers and designers working across the layers of the Web3 tech stack to share unique solutions, encourage interoperability, and harness intelligent systems. Together, we’ll create consistent, sustainable mental models that make navigating the decentralized, AI-powered web intuitive and empowering for everyone.
                   </p>
                 </div>
 
@@ -409,14 +405,7 @@ const Home: NextPage = () => {
           <div className={css['block-1']}>
             <div className={css['left']}>
               <div className={`${css['header']} extra-large-text`}>
-                <span className="bold">Collaborate</span> to create the Web3 UX that we deserve, not one that{' '}
-                <span className={css['zuck-friends']}>
-                  <div className={css['web2']}>
-                    <Image src={Zuck} layout="fill" objectFit="cover" alt="Zuckerberg at hearing" />
-                  </div>
-                  Elon & Zuck{' '}
-                </span>{' '}
-                can co-opt with their Xs and Metas.
+                <span className="bold">Collaborate</span> to reimagine the web. Join the builders, thinkers, and dreamers making it human-first.
               </div>
 
               <p className={`${css['grey']}`}>
