@@ -59,7 +59,7 @@ export function init() {
 
   /////////////////////////////////////////////////////////////////////////
   ///// CREATING LIGHT
-  const light = new THREE.PointLight(0xffff00, 1, 100);
+  const light = new THREE.PointLight(0xffffff, 1, 100); // White light to show true colors
   light.position.set(-3, 0, 8);
   scene.add(light);
 
@@ -81,14 +81,28 @@ export function init() {
   ///// LOADING GLB/GLTF MODEL FROM BLENDER
   loader.load('https://03fltx.csb.app/assets/model/cyberpunk_model.glb', function (gltf) {
   const root = gltf.scene;
+  let i = 0 
   root.traverse((obj) => {
     if (obj.isMesh && obj.material) {
-      // Base surface tint
-      if (obj.material.color) obj.material.color.set('#FFB81C');
-      // Glow/tint that interacts with Bloom
-      if (obj.material.emissive) {
-        // obj.material.emissive.set('#3ae374');
-        //  obj.material.emissiveIntensity = 1.1;
+    i ++;
+
+      // Base surface tint - Argentina blue
+      if (obj.material.color) {
+        if (i % 3 == 0) {
+          obj.material.color.set('#DEAB51');
+        }else { 
+        obj.material.color.set('#017CC2');
+        }
+        console.info("dfsdf")
+      }
+      // Add subtle yellow emissive only to certain parts
+      if (obj.material.emissive && obj.name && obj.name.includes('light')) {
+        // Only add yellow glow to objects with 'light' in the name
+        obj.material.emissiveIntensity = 15;
+      } else if (obj.material.emissive) {
+        // Remove emissive from other parts
+        obj.material.emissive.set('#000000');
+        obj.material.emissiveIntensity = 0;
       }
       obj.material.needsUpdate = true;
     }
