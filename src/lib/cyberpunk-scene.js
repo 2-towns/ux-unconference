@@ -80,7 +80,20 @@ export function init() {
   /////////////////////////////////////////////////////////////////////////
   ///// LOADING GLB/GLTF MODEL FROM BLENDER
   loader.load('https://03fltx.csb.app/assets/model/cyberpunk_model.glb', function (gltf) {
-    scene.add(gltf.scene);
+  const root = gltf.scene;
+  root.traverse((obj) => {
+    if (obj.isMesh && obj.material) {
+      // Base surface tint
+      if (obj.material.color) obj.material.color.set('#FFB81C');
+      // Glow/tint that interacts with Bloom
+      if (obj.material.emissive) {
+        // obj.material.emissive.set('#3ae374');
+        //  obj.material.emissiveIntensity = 1.1;
+      }
+      obj.material.needsUpdate = true;
+    }
+  });
+  scene.add(root);
   });
 
   /////////////////////////////////////////////////////////////////////////
@@ -96,7 +109,7 @@ export function init() {
   const chromaticAberration = new ChromaticAberrationEffect({
     offset: new THREE.Vector2(0.002, 0.02),
     radialModulation: true,
-    modulationOffset: 0.7,
+    modulationOffset: 0.9,
   });
 
   const hueSaturationEffect = new HueSaturationEffect({
