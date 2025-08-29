@@ -78,7 +78,7 @@
     }
 
     .year { 
-      color: $color-grey;
+      color: $color-orange;
     }
   }
 
@@ -140,6 +140,12 @@
     .call-to-action {
       flex-grow: 1;
       flex-shrink: 0;
+
+      @media (max-width: $screen-tiny) {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 16px;
+      }
 
       > * {
         margin-right: 16px;
