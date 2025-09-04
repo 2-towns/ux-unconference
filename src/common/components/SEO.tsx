@@ -12,7 +12,7 @@ export const TITLE = 'W3D — UX Unconference Devconnect'
 export const DESCRIPTION =
   'Open-source design unconference and structured working groups helping to drive improved User Experience and usability standards forward for the decentralized eco-system.'
 export const SITE_URL = 'https://ux.web3.design/'
-export const IMAGE_OG = `${SITE_URL}og-graph.png`
+export const IMAGE_OG = `${SITE_URL}og-graph.png?v=3`
 export const SOCIAL_HANDLE = '@blockedbydesign'
 
 export function SEO(props: SEOProps) {
@@ -39,7 +39,7 @@ export function SEO(props: SEOProps) {
       <meta property="og:image" content={image} key="og_image" />
       <meta property="og:image:url" content={image} key="og_image_url" />
       <meta property="og:image:secure_url" content={image} key="og_image_secure_url" />
-      <meta property="og:image:alt" content="Devconnect Amsterdam" key="og_image_alt" />
+      <meta property="og:image:alt" content="Devconnect Argentina" key="og_image_alt" />
       <meta property="og:image:type" content="image/png" key="og_image_type" />
       <meta property="og:image:width" content="1200" key="og_image_width" />
       <meta property="og:image:height" content="630" key="og_image_height" />
