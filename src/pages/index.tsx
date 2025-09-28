@@ -272,7 +272,7 @@ const Home: NextPage = () => {
               </div>
                <div className={css['call-to-action']}>
                 <Link
-                  href="https://apply.we3.design"
+                  href="https://apply.web3.design"
                   className="button orange-fill sm"
                 >
                   Apply
